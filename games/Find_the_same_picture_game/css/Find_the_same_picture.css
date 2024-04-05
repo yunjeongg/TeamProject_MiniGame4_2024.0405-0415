@@ -209,8 +209,8 @@ body *{
 
 #game-page {
   width: 100vw;
-  height: 100vh;
   background: #000000;
+  /* position: absolute; */
 }
 
 #container {
@@ -219,7 +219,6 @@ body *{
   background: url(../img/mainpage_Bg1.jpg);
   background-size: cover;
   border-bottom: 15px solid rgb(126, 91, 50);
-  z-index: 9999;
   top: 50%;
   left: 50%;
 }

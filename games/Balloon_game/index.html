@@ -3,10 +3,62 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>풍선게임</title>
   <link rel="stylesheet" href="../common/common.css">
+  <link rel="stylesheet" href="css/balloon.css">
+  
 </head>
 <body>
-  
+
+<article id="balloon_main" class="main_wrap">
+  <!-- 게임 레디하는부분 -->
+  <section class="game_ready_wrap">
+    <h1 class="balloon_title">
+      BALLOON<br>
+      POP
+    </h1>
+    <button class="ready_btn">START</button>
+    <button class="ready_level">LEVEL</button>
+    <p class="level_text">nomal</p>
+  </section>
+
+  <!-- 레디하는 화면에서 레벨 누르면 나타는 모달 화면  -->
+  <section class="level_modal">
+    <h2>LEVEL</h2>
+    <button class="level_btn" id="EASY">EASY</button>
+    <button class="level_btn" id="">NORMAL</button>
+    <button class="level_btn" id="">HARD</button>
+  </section>
+
+    
+  <!-- 풍선 이미지  -->
+  <section class="balloon_wrap">
+    <!-- 생성될 풍선 박스  -->
+    <div class="balloon">
+      <img src="img/balloon_1.png" alt="balloon" class="balloon_img">
+      <span class="balloon_number">1</span>
+    </div>
+
+
+  </section>
+
+  <!-- 푸터 : 풍선 터트린 갯수 및 타이머 -->
+  <section class="balloon_footer">
+    <div>
+      <!-- <div><img src="img/balloon_1.png" alt="balloon"></div> -->
+      <!-- 풍선 버튼 클릭하면 클릭한 횟수만큼 보이는 값 -->
+      <p class="click_number">0</p>
+    </div>
+    <div>
+      <!-- <div><img src="img/balloon_1.png" alt="balloon"></div> -->
+      <!-- 게임 시간  -->
+      <p class="timer">30</p>
+    </div>
+  </section>
+
+</article>
+
+
+
 </body>
 </html>

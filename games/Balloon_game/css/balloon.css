@@ -1,0 +1,145 @@
+
+
+@font-face {
+  font-family: 'TTHakgyoansimMonggeulmonggeulR';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2402_keris@1.0/TTHakgyoansimMonggeulmonggeulR.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'KCC-Ganpan';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/KCC-Ganpan.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+#balloon_main.main_wrap{
+  width: 960px;
+  height: 100vh;
+  margin: 0 auto;
+  background: url(../img/balloon_bg.jpg) no-repeat center/cover;
+  /* position: relative; */
+}
+.game_ready_wrap{
+  width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* position: relative; */
+    z-index: 10;
+    text-align: center;
+}
+.game_ready_wrap .balloon_title{
+  font-family: 'TTHakgyoansimMonggeulmonggeulR';
+  margin-top: -150px;
+  font-size: 70px;
+  color: #fff;
+  text-shadow: 7px 0 #4E4CF5, 0 7px #4E4CF5, 7px 0 #4E4CF5, 0 -7px #4E4CF5
+  /* text-shadow: #a8e4ff;text-shadow: -5px 0 deepskyblue, 0 5px deepskyblue, 5px 0 deepskyblue, 0 -5px deepskyblue; */
+}
+.game_ready_wrap button{
+  font-family: 'KCC-Ganpan';
+  padding: 5px 20px;
+  background-color: #fff;
+  border-radius: 5px;
+}
+.game_ready_wrap .ready_btn{
+  font-size: 50px;
+  margin: 50px 0 15px 0;
+ color: #4E4CF5;
+}
+.game_ready_wrap .ready_level{
+  background-color: #4E4CF5;
+  color: #fff;
+  font-size: 35px;
+}
+.game_ready_wrap .level_text{
+  font-family: 'KCC-Ganpan';
+  margin-top: 20px;
+  font-size: 30px;
+  color: #4E4CF5;
+  /* text-shadow: -1px 0 #4E4CF5, 0 1px #4E4CF5, 1px 0 #4E4CF5, 0 -1px #4E4CF5; */
+}
+
+.level_modal{                
+  font-family: 'KCC-Ganpan';
+  position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  z-index: 2;
+  padding: 35px 70px 20px 70px;
+  background-color: #fff;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.level_modal h2{
+  color: #fcbe00;
+  font-size: 40px;
+  font-weight: 900;;
+  padding-bottom: 35px;
+}
+.level_modal .level_btn{
+  margin-bottom: 15px;
+  font-size: 25px;
+  font-family: 'KCC-Ganpan';
+  padding: 5px 10px;
+  border: 3px solid #4E4CF5;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #4E4CF5;
+  cursor: pointer;
+}
+
+.balloon_wrap{
+  width: 960px;
+  height: 80%;
+  position: absolute;
+  top: 0%;
+  z-index: 9;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.balloon_wrap .balloon {
+  position: absolute;
+}
+.balloon_wrap .balloon .balloon_number{
+  font-size: 36px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -80%);
+    color: #333;
+    text-shadow: -2px 0 #fff, 0 2px #fff, 2px 0 #fff, 0 -2px #fff;
+}
+
+
+
+.balloon_footer{
+  position: absolute;
+    bottom: 0;
+    width: 960px;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+.balloon_footer > div{  
+  width: 150px;
+  text-align: center;
+  padding: 20px 0;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.6);
+  font-size: 30px;
+  
+}
+
+
+
+
+
+
+
+

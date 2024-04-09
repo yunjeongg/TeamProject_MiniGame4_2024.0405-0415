@@ -327,9 +327,13 @@ body *{
   margin: 60px 0;
   padding: 40px;
   text-align: center;
+  /* 아래수정 */
+  display: flex;
 }
 .box {
   display: flex;
+  /* 아래수정 */
+  flex-direction: column;
   justify-content: center;
   margin-bottom: 10px;
 }

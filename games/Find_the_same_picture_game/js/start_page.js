@@ -44,15 +44,15 @@ function selectLevel(level) {
 
   if(level.id === 'high') {
     console.log('상 난이도 선택');
-    $totalCardNum.textContent = 28;
+    $totalCardNum.textContent = 32;
 
   } else if (level.id === 'mid') {
     console.log('중 난이도 선택');
-    $totalCardNum.textContent = 20;
+    $totalCardNum.textContent = 24;
 
   } else {
     console.log('하 난이도 선택');
-    $totalCardNum.textContent = 12;
+    $totalCardNum.textContent = 16;
 
 }}
 
@@ -73,6 +73,7 @@ document.querySelector('.startBtn').addEventListener('click', e => {
         // 게임페이지가 나타나도록, 닉네임을 게임페이지에 표시
         document.querySelector('.container').style.display = 'none';
         document.getElementById('header-contents').firstElementChild.lastElementChild.textContent = $nickNameInput.value;
+        $nickNameInput.value = '';
         return;
       }  
       }

@@ -39,6 +39,13 @@ document.querySelector('.levelBtn').addEventListener('click', e => {
 // 레벨에 따른 카드 갯수 설정
 // 난이도에 따른 게임페이지에 카드 갯수 표시
 // 카드를 어떻게 추가, 제거 할지 정하면 다시 만들기로
+const $mainContents = document.getElementById("main-contents");
+const $box1 = document.querySelector(".box1");
+const $box2 = document.querySelector(".box2");
+const $box3 = document.querySelector(".box3");
+const $box4 = document.querySelector(".box4");
+
+
 function selectLevel(level) {
   const $totalCardNum = document.getElementById('header-contents').lastElementChild.lastElementChild;
 
@@ -49,10 +56,16 @@ function selectLevel(level) {
   } else if (level.id === 'mid') {
     console.log('중 난이도 선택');
     $totalCardNum.textContent = 24;
+    $mainContents.removeChild($box1);
+    $mainContents.removeChild($box2);
 
   } else {
     console.log('하 난이도 선택');
     $totalCardNum.textContent = 16;
+    $mainContents.removeChild($box1);
+    $mainContents.removeChild($box2);
+    $mainContents.removeChild($box3);
+    $mainContents.removeChild($box4);
 
 }}
 

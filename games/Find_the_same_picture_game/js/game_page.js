@@ -26,14 +26,16 @@ function timer () {
 
     gameStart = setInterval (()=> {
         time = time - 1000; // 시간 (매 초당 1000씩 줄어듬)
+        
         min = time / 60000; // 분 (총 time 2분 120000) / (1분 60000)
-        sec = Math.round(time / 2000); // 초 (총 time 2분 120000) / 1초 (2000)
-    
+        
+        // sec = time / 2000; // 초 (총 time 2분 120000) / 1초 (2000)
+        if (min > 0 && sec === 0) { sec = 60;}
         if (sec > 0) { // 초가 0보다 클 경우 -1씩 줄어든다
             sec = sec -1;
-            $time.textContent = `0${Math.floor(min)} : ${sec}`;
-            if (min === 0 || sec < 10) { // 0분이면서 초가 0-9사이일때 앞에 0붙여서 자리수맞추기 조건
-                    $time.textContent = `0${Math.floor(min)} : 0${sec}`;
+            $time.textContent = `0${Math.floor(min)} : ${Math.floor(sec)}`;
+            if (sec < 10 && min > 0 ) $time.textContent = `0${Math.floor(min)} : 0${Math.floor(sec)}`;
+            if (min < 1 && sec < 10) { // 0분이면서 초가 0-9사이일때 앞에 0붙여서 자리수맞추기 조건
                     $time.style.color = 'red';
                     $timeText.style.color = 'red';
                 }
@@ -61,7 +63,10 @@ const $startBtn = document.querySelector(".startBtn");
 
 // 시작 버튼 눌렀을 때 게임페이지 타이머 이벤트효과
 $startBtn.addEventListener ("click",()=> {
-    timer();
+    clearInterval(gameStart); // 0초일때 타이머 종료
+    $time.textContent = `02 : 00`; // 기본시작시간 입력하기
+    setTimeout(() => {timer()}, 3000);
+  
 });
 
 

@@ -1,3 +1,6 @@
+
+
+
 const cards = [
   '<div class="front" style="background-image: url(./img/0000.jpg);"></div><div data-id="1" class="back" style="background-image: url(./img/0001.jpg);"></div>',
   '<div class="front" style="background-image: url(./img/0000.jpg);"></div><div data-id="2" class="back" style="background-image: url(./img/0002.jpg);"></div>',
@@ -17,27 +20,27 @@ const cards = [
   '<div class="front" style="background-image: url(./img/0000.jpg);"></div><div data-id="16" class="back" style="background-image: url(./img/0016.jpg);"></div>',
 ];
 
-let temp = [];
+let gameLevel = game.level;
 //상, 중, 하 난이도에 따른 카드 개수
-function cardNumber(choice) {
-  if (choice === "high") {
+function cardNumber(gameLevel) {
+  let temp = [];
+  if (gameLevel === "high") {
     // 상
     return (temp = [...cards.slice(), ...cards.slice()]);
-  } else if (choice === "middle") {
+  } else if (gameLevel === "middle") {
     // 중
     return (temp = [...cards.slice(0, 12), ...cards.slice(0, 12)]);
-  } else if (choice === "low") {
+  } else if (gameLevel === "low") {
     // 하
     return (temp = [...cards.slice(0, 8), ...cards.slice(0, 8)]);
   }
 }
-cardNumber("high"); //이거
 
-// 32개의 숫자가 든 배열 생성
-total = [];
-for (let i = 0; i < 32; i++) {
-  total[i] = i;
-}
+// // 32개의 숫자가 든 배열 생성
+// total = [];
+// for (let i = 0; i < 32; i++) {
+//   total[i] = i;
+// }
 
 // 32개의 숫자배열 랜덤정렬
 let num = [];
@@ -64,7 +67,7 @@ while (i < 32) {
 //   }
 //   console.log(newNumber);
 
-let originalCards = temp.slice();
+// let originalCards = temp.slice();
 
 // 카드를 배열에 랜덤 배치
 function shuffleCard() {
@@ -73,7 +76,7 @@ function shuffleCard() {
   }
 }
 
-shuffleCard();
+// shuffleCard();
 
 // 랜덤 배치된 카드들을 채워넣는 함수.
 function random () {
@@ -83,4 +86,5 @@ for (i = 0; i < originalCards.length; i++) {
 }
 }
 
- random();
+//  random();
+

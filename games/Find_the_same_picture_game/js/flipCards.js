@@ -1,11 +1,10 @@
+// 카드 뒤집기 전역변수
+let flipCardCount = 0; // 카드 클릭시마다 뒤집힌 횟수 증가
+let firstFlipCard; // 첫번째 뒤집은 카드
+let secondFlipCard; // 두번째 뒤집은 카드
+let exit = true; // 카드 뒤집을 수 있는 여부 확인
+let isClear = 0; // 두 짝 맞추기 성공 횟수 증가
 
-// console.log(abc);
-
-let flipCardCount = 0;
-let firstFlipCard;
-let secondFlipCard;
-let exit = true;
-let isClear = 0;
 // 클릭시 카드 뒤집기, 뒤집은 카드 일치 불일치 확인
 document.getElementById('main-contents').addEventListener( 'click', e => {
 
@@ -31,7 +30,7 @@ document.getElementById('main-contents').addEventListener( 'click', e => {
   if(flipCardCount === 2) {
     if(firstFlipCard.dataset.id !== secondFlipCard.dataset.id) {
       // 불일치 할 경우
-      // 불일치 했을 때 클릭 이벤트가 실행되지 않게 exit를 flase로 둠.
+      // 불일치 했을 때 클릭 이벤트가 실행되지 않게 exit를 false로 둠.
       exit = false;
       // 불일치 할 경우 0.9초 뒤에 카드가 다시 뒤집힘.
       setTimeout(() => {firstFlipCard.parentElement.style.transform = 'rotateY(0deg)'}, 900);

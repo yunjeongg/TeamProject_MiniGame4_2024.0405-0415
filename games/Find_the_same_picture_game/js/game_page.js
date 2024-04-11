@@ -5,26 +5,26 @@
 
 //제한시간 태그 위치 전역변수
 const $headerContents = document.getElementById("header-contents");
-console.log($headerContents);
+// console.log($headerContents);
 
 const $timeText = document.querySelector("#header-contents .time-text");
-console.log($timeText);
+// console.log($timeText);
 
 const $time = document.querySelector("#header-contents .time");
-console.log($time);
+// console.log($time);
 
 
 //기본시간 01:00분, 00:00분이 될 때까지 매 초당 1초 줄어들게 하기
-let time = 60000; //1초 1000, 60초 60000
-let min = 1; // 분 기본시간 1분
-let sec = 60; // 초 기본시간 60초
+let time = 120000; //1초 1000, 60초 60000
+let min = 2; // 분 기본시간 1분
+let sec = 120; // 초 기본시간 60초
 
 $time.textContent = `0${min} : 00`; // 기본시작시간 입력하기
 
 function timer () { // 60초에서 0초까지 시간이 줄어드는 함수
     gameStart = setInterval (()=> {
         time = time - 1000; // 시간 매 초당 1000씩 줄어듬
-        min = time / 60000; // 분은 시간(60000) / 600000;
+        min = time / 120000; // 분은 시간(60000) / 600000;
     
         if (sec > 0) { // 초가 0보다 클 경우 -1씩 줄어든다
             sec = sec -1;
@@ -36,8 +36,8 @@ function timer () { // 60초에서 0초까지 시간이 줄어드는 함수
             }
         }
         if (Math.floor(min) === 0 && sec === 0) { // 0분이면서 0초일때 초기화
-            sec = 60;
-            min = 1;
+            sec = 120;
+            min = 2;
             $time.textContent = `0${min} : 00`;
             $time.style.color = 'rgb(241, 194, 91)'; // 색상 초기화
             $timeText.style.color = 'rgb(241, 194, 91)'; // 색상 초기화
@@ -51,7 +51,7 @@ function timer () { // 60초에서 0초까지 시간이 줄어드는 함수
 // ===== 시작 누르면 타이머 시작 이벤트 ===== //
 // 시작버튼 태그 위치 전역변수
 const $startBtn = document.querySelector(".startBtn");
-console.log($startBtn);
+// console.log($startBtn);
 
 //timer함수 호출부분
 // 시작 버튼 눌렀을 때 게임페이지 타이머 이벤트효과
@@ -63,10 +63,10 @@ $startBtn.addEventListener ("click",()=> {
 
 //gameStart = setInterval 종료시키면서 불러올 게임결과 태그위치 전역변수
 const $GoodModal = document.querySelector("#modal .good"); // 잘했을때
-console.log($GoodModal);
+// console.log($GoodModal);
 
 const $BadModal = document.querySelector("#modal .bad"); // 못했을때
-console.log($BadModal);
+// console.log($BadModal);
 
 //gameStart = setInterval 종료시키기
 // setTimeout(()=> {
@@ -87,7 +87,7 @@ console.log($BadModal);
 // ===== 나가기 누르면 이 게임 메인페이지로 이동 ===== //
 // 나가기버튼 태그 위치 전역변수
 const $close = document.querySelector(".close");
-console.log($close);
+// console.log($close);
 
 //메인페이지 태그 위치 전역변수
 const $StartContainer = document.querySelector(".container"); // 메인 페이지

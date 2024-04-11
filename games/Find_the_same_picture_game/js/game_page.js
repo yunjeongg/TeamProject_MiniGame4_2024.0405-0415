@@ -156,10 +156,12 @@ const closeAndName = () => {
 // 다시하기 버튼 눌렀을 때 닉네임입력페이지로 이동하는 이벤트효과
 // 잘했을때
 $replayG.addEventListener('click', () => {
+    clearInterval(gameStart); // 타이머 초기화
     closeAndName();
  });
 
 // 못했을때
 $replayB.addEventListener('click', () => {
+    clearInterval(gameStart); // 타이머 초기화
     closeAndName();
  });

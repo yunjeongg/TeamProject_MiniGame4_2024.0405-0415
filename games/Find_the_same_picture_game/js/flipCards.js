@@ -42,7 +42,7 @@ document.getElementById('main-contents').addEventListener( 'click', e => {
       isClear += 2;
       if(isClear === [...document.querySelectorAll("#main-contents .flipBox .main-imgbox")].length) {
         // 성공 모달창 뜨게 만들기
-        $GoodModal.style.zIndex = 1500; // 창 위치 초기화
+        $GoodModal.style.zIndex = 1600; // 창 위치 초기화
         $GoodModal.style.display = 'block'; // 창 위치 초기화
         console.log(`클리어!`);
       }

@@ -17,7 +17,7 @@ const $time = document.querySelector("#header-contents .time");
 //기본시간 01:00분, 00:00분이 될 때까지 매 초당 1초 줄어들게 하기
 let time = 120000; //1초 1000, 60초 60000
 let min = 2; // 분 기본시간 1분
-let sec = 120; // 초 기본시간 60초
+let sec = 60; // 초 기본시간 60초
 
 $time.textContent = `0${min} : 00`; // 기본시작시간 입력하기
 
@@ -25,19 +25,22 @@ function timer () { // 60초에서 0초까지 시간이 줄어드는 함수
     gameStart = setInterval (()=> {
         time = time - 1000; // 시간 매 초당 1000씩 줄어듬
         min = time / 120000; // 분은 시간(60000) / 600000;
+        sec = time / 1000
     
         if (sec > 0) { // 초가 0보다 클 경우 -1씩 줄어든다
             sec = sec -1;
             $time.textContent = `0${Math.floor(min)} : ${sec}`;
-            if (sec < 10 || sec === 0) { // 초가 0-9사이일때 앞에 0붙여서 자리수맞추기
-                $time.textContent = `0${Math.floor(min)} : 0${sec}`;
-                $time.style.color = 'red';
-                $timeText.style.color = 'red';
+            if (min = 0) {
+                if (sec < 10 || sec === 0) { // 초가 0-9사이일때 앞에 0붙여서 자리수맞추기
+                    $time.textContent = `0${Math.floor(min)} : 0${sec}`;
+                    $time.style.color = 'red';
+                    $timeText.style.color = 'red';
+                }
             }
         }
         if (Math.floor(min) === 0 && sec === 0) { // 0분이면서 0초일때 초기화
-            sec = 120;
-            min = 2;
+            sec = 60;
+            min = 1;
             $time.textContent = `0${min} : 00`;
             $time.style.color = 'rgb(241, 194, 91)'; // 색상 초기화
             $timeText.style.color = 'rgb(241, 194, 91)'; // 색상 초기화
@@ -134,6 +137,9 @@ cclose = $close.addEventListener('click', () => {
 // 다시하기버튼 태그 위치 전역변수
 const $replay = document.querySelector(".replay");
 console.log($replay);
+cclose = $replay.addEventListener('click', () => {
+    closeAndStart();
+});
 
 //닉네임입력 태그 위치 전역변수
 // const $modalNamdAndDifficulity // 닉네임, 난이도선택 페이지

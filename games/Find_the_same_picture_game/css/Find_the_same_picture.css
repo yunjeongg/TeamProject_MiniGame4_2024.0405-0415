@@ -338,6 +338,7 @@ body *{
   text-align: center;
   /* 아래수정 */
   display: flex;
+  justify-content: center;
 }
 .box {
   display: flex;

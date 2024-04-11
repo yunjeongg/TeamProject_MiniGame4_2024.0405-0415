@@ -114,7 +114,9 @@ document.querySelector(".startBtn").addEventListener("click", (e) => {
           "header-contents"
         ).firstElementChild.lastElementChild.textContent = $nickNameInput.value;
         $nickNameInput.value = "";
+        // 카드 랜덤 배치 함수
         randomCards(gameLevel);
+        // 게임 시작 시 카드 전체를 뒤집어 보여주고 다시 뒤집음
         filpCardAll();
         return;
       }
@@ -137,7 +139,7 @@ function filpCardAll() {
     }
   }, 2500);
 }
-
+// 카드 랜덤 배치 함수 모음
 function randomCards() {
   let temp = [], num = [], originalCards = [];
   temp = cardNumber(gameLevel);
@@ -149,8 +151,9 @@ function randomCards() {
   random(originalCards);
 }
 
-//상, 중, 하 난이도에 따른 카드 개수
+//상, 중, 하 난이도에 따른 카드 개수 설정 후 배열에 담기
 function cardNumber() {
+  // 난이도에 따른 카드 개수 설정 상 = 32개 중 = 24개 하 = 16개 및 그에 따른 카드를 2개씩 배열에 저장
   if (gameLevel === "high") {
     // 상
     return  [...cards.slice(), ...cards.slice()];
@@ -162,11 +165,14 @@ function cardNumber() {
     return [...cards.slice(0, 8), ...cards.slice(0, 8)];
   }
 }
-
+// 카드 랜덤 배치를 위한 인덱스 번호 랜덤으로 뽑아 배열에 담기
 function cardIndex(gameLevel) {
   let total = [];
   let num = [];
   let i = 0;
+  // 난이도 선택에 따라 인덱스 번호 범위 설정
+  // 상 = 32개 중 = 24개 하 = 16개
+  // 난이도에 따른 번호를 배열에 담고 랜덤으로 배열에서 가져와 다른 배열에 뽑은 순서로 배치
   if (gameLevel === "high") {
     for (let i = 0; i < 32; i++) {
       total[i] = i;
@@ -210,21 +216,7 @@ function cardIndex(gameLevel) {
   }
 }
 
-// // console.log(temp);
-// // // 태그 랜덤정렬
-// // let newNumber =[];
-// // while (i < 33) {
-// //     let random = Math.floor(Math.random() * total.length);
-// //     if (!num.includes(total[random])) { // 중복카드 배열에 넣지않기
-// //         num.push(total[random]);
-// //         i++;
-// //     } for (let j = 0; j < 33; j++) {
-// //       newNumber[j] = temp[num];
-// //     }newNumber.push(temp[num]);
-// //   }
-// //   console.log(newNumber);
 
-// let originalCards = temp.slice();
 
 // 카드를 배열에 랜덤 배치
 function shuffleCard(temp, num) {
@@ -235,7 +227,7 @@ function shuffleCard(temp, num) {
   return cardsList;
 }
 
-// 랜덤 배치된 카드들을 채워넣는 함수.
+// 랜덤 배치된 카드들을 html에 채워넣는 함수.
 function random(originalCards) {
   const cardsBox = [...document.querySelectorAll(".main-imgbox")];
   for (i = 0; i < originalCards.length; i++) {

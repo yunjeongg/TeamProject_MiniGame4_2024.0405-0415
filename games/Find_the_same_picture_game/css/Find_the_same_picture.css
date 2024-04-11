@@ -340,7 +340,7 @@ body *{
   /* box-shadow: 3px 2px rgb(117, 117, 117); */
   width: 100px;
   height: 100px;
-  /* position: relative; */
+  position: relative;
   transition: 0.4s;
   transform-style: preserve-3d;
   transform: rotate(0deg);
@@ -388,5 +388,7 @@ body *{
           0 0 0 2px rgba(255,255,255,0.15) inset,
           0 0 0 1px rgba(0,0,0,0.4);
 }
-
+button {
+  user-select: none;
+}
 

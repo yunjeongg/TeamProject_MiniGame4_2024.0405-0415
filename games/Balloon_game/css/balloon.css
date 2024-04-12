@@ -28,7 +28,18 @@ html,body{
 }
 
 
-
+.close{
+  display: block;
+    font-size: 30px;
+    top: 30px;
+    right: 30px;
+    position: absolute;
+    color: white;
+    text-shadow: 2px 2px 2px black;
+}
+.close i{
+  color: rgb(241, 194, 91);
+}
 
 .game_ready_wrap{
   width: 100%;
@@ -40,6 +51,7 @@ html,body{
     /* position: relative; */
     z-index: 10;
     text-align: center;
+    position: relative;
 }
 .game_ready_wrap .balloon_title{
   font-family: 'TTHakgyoansimMonggeulmonggeulR';

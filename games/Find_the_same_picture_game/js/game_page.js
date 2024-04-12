@@ -6,13 +6,10 @@
 
 //제한시간 태그 위치 전역변수
 const $headerContents = document.getElementById("header-contents");
-// console.log($headerContents);
 
 const $timeText = document.querySelector("#header-contents .time-text");
-// console.log($timeText);
 
 const $time = document.querySelector("#header-contents .time");
-// console.log($time);
 
 let gameStart; // 초기화시 시간초기화해줄 변수
 
@@ -53,14 +50,12 @@ function timer () {
             clearInterval(gameStart); // 0초일때 타이머 종료
         } 
     }, 1000); // 1초마다 타이머 실행
-    console.log(gameStart);
 }
 
 
 // ===== 시작버튼 누르면 타이머 시작 이벤트 ===== //
 // 시작버튼 태그 위치 전역변수
 const $startBtn = document.querySelector(".startBtn");
-// console.log($startBtn);
 
 
 // 시작 버튼 눌렀을 때 게임페이지 타이머 이벤트효과
@@ -75,17 +70,14 @@ $startBtn.addEventListener ("click",()=> {
 // ===== 타이머 시간초과시 결과모달창 이벤트 ===== //
 // 잘했을 때 불러올 게임결과 태그위치 전역변수
 const $GoodModal = document.querySelector("#modal .good"); // 잘했을때
-// console.log($GoodModal);
 
 // 못했을 때 불러올 게임결과 태그위치 전역변수
 const $BadModal = document.querySelector("#modal .bad"); // 못했을때
-// console.log($BadModal);
 
 
 // ===== 나가기 버튼 누르면 메인페이지로 이동 ===== //
 // 나가기버튼 태그 위치 전역변수
 const $close = document.querySelector(".close");
-// console.log($close);
 
 //메인페이지 태그 위치 전역변수
 const $StartContainer = document.querySelector(".container"); // 메인 페이지
@@ -118,16 +110,18 @@ const closeAndStart = () => {
 cclose = $close.addEventListener('click', () => { // 나가기 버튼 눌렀을 때
     closeAndStart(); // 시작페이지로 나가기
     clearInterval(gameStart); // 타이머 초기화
+    let $cards = [...document.querySelectorAll(".main-imgbox")];
+    for (i = 0; i < $cards.length; i++) {
+    $cards[i].style.transform = "rotateY(0deg)";
+    }
 });
 
 
 // ===== 다시하기 버튼 누르면 닉네임페이지로 이동 ===== //
 // 다시하기버튼 태그 위치 전역변수
 const $replayG = document.querySelector(".replayG");
-console.log($replayG);
 
 const $replayB = document.querySelector(".replayB");
-console.log($replayB);
 
 //닉네임입력 태그 위치 전역변수
 // const $modalNamdAndDifficulity // 닉네임, 난이도선택 페이지
@@ -160,10 +154,18 @@ const closeAndName = () => {
 $replayG.addEventListener('click', () => {
     clearInterval(gameStart); // 타이머 초기화
     closeAndName();
+    let $cards = [...document.querySelectorAll(".main-imgbox")];
+    for (i = 0; i < $cards.length; i++) {
+    $cards[i].style.transform = "rotateY(0deg)";
+    }
  });
 
 // 못했을때
 $replayB.addEventListener('click', () => {
     clearInterval(gameStart); // 타이머 초기화
     closeAndName();
+    let $cards = [...document.querySelectorAll(".main-imgbox")];
+    for (i = 0; i < $cards.length; i++) {
+    $cards[i].style.transform = "rotateY(0deg)";
+    }
  });

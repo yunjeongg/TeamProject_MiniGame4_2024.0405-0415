@@ -5,6 +5,9 @@ let secondFlipCard; // 두번째 뒤집은 카드
 let exit = true; // 카드 뒤집을 수 있는 여부 확인
 let isClear = 0; // 두 짝 맞추기 성공 횟수 증가
 
+document.querySelector(".startBtn").addEventListener('click', e => {
+  isClear = 0;
+});
 // 클릭시 카드 뒤집기, 뒤집은 카드 일치 불일치 확인
 document.getElementById('main-contents').addEventListener( 'click', e => {
 
@@ -24,7 +27,6 @@ document.getElementById('main-contents').addEventListener( 'click', e => {
 
   // 이벤트 발생때마다 뒤집힌 횟수 카운트 증가
   ++flipCardCount;
-  console.log([...document.querySelectorAll("#main-contents .flipBox .main-imgbox")].length);
 
   // 뒤집힌 횟수가 2회가 되었을때 뒤집힌 두 카드가 일치한지 불일치 한지 확인
   if(flipCardCount === 2) {
@@ -39,16 +41,15 @@ document.getElementById('main-contents').addEventListener( 'click', e => {
       setTimeout(() => {exit = true}, 900);
     } else {
       isClear += 2;
-      if(isClear === [...document.querySelectorAll("#main-contents .flipBox .main-imgbox")].length) {
+      if(isClear === [...document.querySelectorAll(".main-imgbox")].length) {
         // 성공 모달창 뜨게 만들기
         $GoodModal.style.zIndex = 1600; // 창 위치 초기화
         $GoodModal.style.display = 'block'; // 창 위치 초기화
-        console.log(`클리어!`);
       }
     }
     // 뒤집기 카운트 초기화
     flipCardCount = 0;
-}
+ }
 });
  
  

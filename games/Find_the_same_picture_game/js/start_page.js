@@ -73,7 +73,6 @@ const $box4 = document.querySelector(".box4");
       .lastElementChild;
 
   if (level.id === "high") {
-    console.log(HTMLLIST);
     
     // console.log('상 난이도 선택');
     $totalCardNum.textContent = 32;
@@ -127,15 +126,15 @@ document.querySelector(".startBtn").addEventListener("click", (e) => {
 
 // 게임 시작 버튼 클릭시, 0.5초뒤 카드 뒤집기 이후 2초뒤 다시 뒤집기
 function filpCardAll() {
-  let cards = [...document.querySelectorAll(".main-imgbox")];
+  let $cards = [...document.querySelectorAll(".main-imgbox")];
   setTimeout((e) => {
-    for (i = 0; i < cards.length; i++) {
-      cards[i].style.transform = "rotateY(180deg)";
+    for (i = 0; i < $cards.length; i++) {
+      $cards[i].style.transform = "rotateY(180deg)";
     }
   }, 500);
   setTimeout((e) => {
-    for (i = 0; i < cards.length; i++) {
-      cards[i].style.transform = "rotateY(0deg)";
+    for (i = 0; i < $cards.length; i++) {
+      $cards[i].style.transform = "rotateY(0deg)";
     }
   }, 2500);
 }
@@ -229,9 +228,9 @@ function shuffleCard(temp, num) {
 
 // 랜덤 배치된 카드들을 html에 채워넣는 함수.
 function random(originalCards) {
-  const cardsBox = [...document.querySelectorAll(".main-imgbox")];
+  const $cardsBox = [...document.querySelectorAll(".main-imgbox")];
   for (i = 0; i < originalCards.length; i++) {
-    cardsBox[i].innerHTML = originalCards[i];
+    $cardsBox[i].innerHTML = originalCards[i];
   }
 }
 

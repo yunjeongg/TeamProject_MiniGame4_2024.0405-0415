@@ -259,4 +259,3 @@ $readyBtn.addEventListener("click", function (e) {
 $readyLevel.addEventListener("click", function (e) {
   levelModalShow();
 });
-

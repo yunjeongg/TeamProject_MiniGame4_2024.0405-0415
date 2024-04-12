@@ -35,9 +35,10 @@ function timer () {
             sec = sec -1;
             $time.textContent = `0${Math.floor(min)} : ${Math.floor(sec)}`;
             if (sec < 10 && min > 0 ) $time.textContent = `0${Math.floor(min)} : 0${Math.floor(sec)}`;
-            if (min < 1 && sec < 10) { // 0분이면서 초가 0-9사이일때 앞에 0붙여서 자리수맞추기 조건
+            if (min < 1 && sec < 11) { // 0분이면서 초가 0-9사이일때 앞에 0붙여서 자리수맞추기 조건
                     $time.style.color = 'red';
                     $timeText.style.color = 'red';
+                    $time.classList.toggle("scale");
                 }
             }
         if (Math.floor(min) === 0 && sec === 0) { // 0분이면서 0초일때 초기화 조건
@@ -45,6 +46,7 @@ function timer () {
             min = 2;
             $time.textContent = `0${min} : 00`; // 타이머 텍스트 초기화
             $time.style.color = 'rgb(241, 194, 91)';
+            $time.classList.remove("scale");
             $timeText.style.color = 'rgb(241, 194, 91)';
             $BadModal.style.zIndex = 1500; // 창 위치 초기화
             $BadModal.style.display = 'block';

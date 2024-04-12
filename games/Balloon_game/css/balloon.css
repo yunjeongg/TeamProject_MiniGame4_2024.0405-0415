@@ -24,8 +24,9 @@ html,body{
   height: 100vh;
   margin: 0 auto;
   background: url(../img/balloon_bg2.jpg) no-repeat center/cover;
-  /* position: relative; */
+  position: relative;
 }
+
 
 
 .close{
@@ -51,7 +52,6 @@ html,body{
     /* position: relative; */
     z-index: 10;
     text-align: center;
-    position: relative;
 }
 .game_ready_wrap .balloon_title{
   font-family: 'TTHakgyoansimMonggeulmonggeulR';

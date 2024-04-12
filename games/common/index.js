@@ -1,5 +1,6 @@
 let $gameBtn = document.querySelector('.signBoard').firstElementChild;
 let $gameSeletBtn = document.querySelector('.show_game_img1');
+let $lankBtn = document.querySelector('.signBoard').lastElementChild;
 // 게임 버튼 클릭시 게임 목록 모달창 나타나는 이벤트 핸들러
 $gameBtn.addEventListener('click', e => {
   let $selectGame = document.querySelector('.show_wrap1');
@@ -46,4 +47,15 @@ $gameSeletBtn.addEventListener('mouseout', e => {
     $img2.style.transition = '1s';
     $img2.style.border = '3px solid  #fff'
   }
+})
+// 랭킹버튼 클릭시 랭킹 모달창 보이게하는 이벤트 핸들러
+$lankBtn.addEventListener('click', e => {
+  document.querySelector('.show_wrap2').style.display = 'block';
+})
+
+// 랭킹표시 페이지 외 다른 부분 클릭시 랭킹 모달창 안보이게 하는 이벤트 핸들러
+document.querySelector('.show_wrap2').addEventListener('click', e => {
+  let $lank = document.querySelector('.show_wrap2');
+  if(e.target.matches('.game_imgs div')) return;
+  $lank.style.display = 'none';
 })

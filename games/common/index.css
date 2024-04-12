@@ -132,7 +132,7 @@ body{
   text-align: center;
   color: #113366;
 }
-.show_wrap2 .game_imgs a{
+.show_wrap2 .game_imgs div{
   display: flex;
   width: 100%;
   height: 100%;

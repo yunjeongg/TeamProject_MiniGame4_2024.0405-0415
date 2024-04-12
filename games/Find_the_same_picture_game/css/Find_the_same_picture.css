@@ -71,6 +71,16 @@ body *{
           0 0 0 2px rgba(255,255,255,0.15) inset,
           0 0 0 1px rgba(0,0,0,0.4);
 }
+.container .mainContainer #openModal:hover {
+  background-color: #f06151;
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.15) inset,
+        0 0 0 2px rgba(255,255,255,0.15) inset,
+        0 8px 0 0 #C24032,
+        0 8px 0 1px rgba(0,0,0,0.2),
+        0 8px 8px 1px rgba(0,0,0,0.5);
+  color: #f8e0e0;
+  cursor: pointer;
+}
 
 
 .container .prevPage a{
@@ -81,6 +91,9 @@ body *{
   position: absolute;
   color: white;
   text-shadow: 2px 2px 2px black;
+}
+#closeModal:hover {
+  cursor: pointer;
 }
 .container .modal {
   position: absolute;
@@ -159,6 +172,9 @@ body *{
         0 0 0 1px rgba(0,0,0,0.4);
   font-size: 25px;
 }
+.container .modal .modalContent .levelBtn button:hover {
+  cursor: pointer;
+}
 .container .modal .modalContent .exit {
   position: absolute;
   top: 0;
@@ -192,6 +208,16 @@ body *{
           0 0 0 2px rgba(255,255,255,0.15) inset,
           0 0 0 1px rgba(0,0,0,0.4);
 
+}
+.container .modal .modalContent .startBtn:hover {
+  background-color: #f15b4a;
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.15) inset,
+        0 0 0 2px rgba(255,255,255,0.15) inset,
+        0 8px 0 0 #C24032,
+        0 8px 0 1px rgba(0,0,0,0.2),
+        0 8px 8px 1px rgba(0,0,0,0.5);
+  color: #f8e0e0;
+  cursor: pointer;
 }
 
 
@@ -285,7 +311,18 @@ body *{
     box-shadow: 0 0 0 1px #F0D264 inset,
             0 0 0 2px rgba(255,255,255,0.15) inset,
             0 0 0 1px rgba(0,0,0,0.4);
-  }
+}
+#modal .replayG:hover,
+#modal .replayB:hover {
+  background-color: #e9bd20;
+  box-shadow: 0 0 0 1px #e9bd20 inset,
+        0 0 0 2px rgba(255,255,255,0.15) inset,
+        0 8px 0 0 rgba(185, 155, 46, 0.7),
+        0 8px 0 1px rgba(0,0,0,.4),
+        0 8px 8px 1px rgba(0,0,0,0.5);
+  cursor: pointer;
+  color: rgb(241, 203, 120);
+}
 
 
 /* header Section */
@@ -303,14 +340,22 @@ body *{
   line-height: 1.3;
   text-align: center;
 }
-.time-box:hover {
-  animation: rumble, 1s, both;
+.time-box .scale {
+  animation: vibration 2s infinite;
 }
-@keyframes rumble {
-  0%, 
-  100% { transform: scale(1);    }
-  25%  { transform: scale(0.97); }
-  75%  { transform: scale(1.03); }
+@keyframes vibration {
+  0% {
+    transform: scale(0.7);
+  }
+  25% {
+    transform: scale(0.5, 1.2);
+  }
+  50% {
+    transform: scale(0.9, 0.5);
+  }
+  100% {
+    transform: scale(1.2);
+  }
 }
 
 
@@ -366,7 +411,7 @@ body *{
 
 /* footer Section */
 #footer-contents {
-  padding: 10px 0px;
+  padding: 25px 0px;
   font-size: 35px;
   text-shadow: 2px 2px rgb(134, 134, 134);
   text-align: center;
@@ -382,11 +427,22 @@ body *{
         0 8px 0 0 #be4133,
         0 8px 0 1px rgba(0,0,0,0.4),
         0 8px 8px 1px rgba(0,0,0,0.5);
+  color: rgb(245, 236, 236);
 }
 #footer-contents .close:active {
   box-shadow: 0 0 0 1px #c63702 inset,
           0 0 0 2px rgba(255,255,255,0.15) inset,
           0 0 0 1px rgba(0,0,0,0.4);
+}
+#footer-contents .close:hover {
+  background-color: #e43724;
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.15) inset,
+        0 0 0 2px rgba(255,255,255,0.15) inset,
+        0 8px 0 0 #e43724,
+        0 8px 0 1px rgba(0,0,0,0.2),
+        0 8px 8px 1px rgba(0,0,0,0.5);
+  color: #cec5c5;
+  cursor: pointer;
 }
 button {
   user-select: none;

@@ -43,7 +43,7 @@ html,body{
 }
 .game_ready_wrap .balloon_title{
   font-family: 'TTHakgyoansimMonggeulmonggeulR';
-  height: 245px;
+  height: 75px;
   margin-top: -150px;
   margin-bottom: 0;
   font-size: 70px;
@@ -216,8 +216,8 @@ button,.balloon{cursor: pointer;}
 }
 
 strong {
+  font-family: 'KCC-Ganpan';
   z-index: 2;
-  font-family: 'Avalors Personal Use';
   font-size: 25px;
   letter-spacing: 5px;
   color: #FFFFFF;
@@ -421,4 +421,10 @@ strong {
   background-color: #fff;
   border-radius: 10px;
   z-index: 9;
+}
+
+.level_modal h2{
+  position: static;
+  text-align: center;
+  transform: translateY(0);
 }
